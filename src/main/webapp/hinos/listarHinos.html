@@ -1,0 +1,38 @@
+<div ng-controller="HinosListCtrl">
+	<!-- Olá {{nome}} -->
+	<div class="form-inline">
+		<div class="form-group">
+			<span class="input-group-btn"><a href="/gerenciadorlds/#/hinos/lancarHino" class="btn btn-primary" type="button">Lançar Hino</a></span>
+			<label for="inputquery">Procurar:</label>
+			<input ng-model="query" ng-model-options="{debounce: 500}" id="inputquery">
+			<label>Ordenar por:</label>
+			<select ng-model="orderProp" class="form-control">
+			  <option value=numero>N do Hino</option>
+			  <option value="titulo">Titulo</option>
+			  <option value="dataUsado">Data De Uso</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading">Historico de Hinos</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Titulo</th>
+						<th>Numero</th>
+						<th>Data Tocado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="hino in hinos | filter:query | orderBy:orderProp">
+						<td class="row">{{hino.titulo}}</td>
+						<td>{{hino.numero}}</td>
+						<td>{{hino.dataUsado}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="panel-heading">Total de hinos: {{hinos.length}}</div>
+		</div>
+	</div>
+</div>

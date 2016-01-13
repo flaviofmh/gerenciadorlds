@@ -1,0 +1,33 @@
+<html lang="pt" ng-app="ldsApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Iniciando</title>
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="styles/estilos.css">
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
+		<script src="controllers/hinocontroller.js"></script>
+		<script src="controllers/hinoeditcontroller.js"></script>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h1 class="text-center">Gerenciador - LDSManeger</h1>
+			</div>
+			<ng-view></ng-view>
+		</div>
+		<footer class="blog-footer">
+			<p>
+				Ala Manaira Gerenciador Interno - Customizado <a href="#">LDSmaneger</a>
+				by <a href="#">@alaManaira</a>.
+			</p>
+			<p>
+				<a href="#">Voltar ao topo</a>
+			</p>
+		</footer>
+	</body>
+</html>
