@@ -1,5 +1,6 @@
 package com.lds.resource;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -27,11 +28,12 @@ public class HinoResource {
 	
 	@POST
 	@Path("/inserir")
-	public String inserir(Hino hino) {
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void inserir(String hino) {
 		HinoDAO hinoDAO = new HinoDAO();
-		hinoDAO.salvar(hino);
+		Hino novoHino = new Gson().fromJson(hino, Hino.class);
+		hinoDAO.salvar(novoHino);
 		System.out.println("entou no metodo");
-		return "sucesso";
 	}
 
 }

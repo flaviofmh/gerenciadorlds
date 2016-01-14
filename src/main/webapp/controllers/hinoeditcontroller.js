@@ -3,10 +3,12 @@ angular.module('ldsApp').controller('HinoEditCtrl', function ($scope, $http) {
 	$scope.mensagem = '';
     $scope.submeter = function() {
     	if ($scope.formulario.$valid) {
+    		$scope.dataconvertida = $scope.hino.dataUsado;
+    		$scope.hino.dataUsado = new Date($scope.dataconvertida);
 	    	$http({
 			  method: 'POST',
 			  url: 'http://localhost:8080/gerenciadorlds/lds/hino/inserir',
-			  data : {hino: $scope.hino},
+			  data : $scope.hino,
 			  headers: {
 			        'Content-Type': 'application/json'
 			  }
