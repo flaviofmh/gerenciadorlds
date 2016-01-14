@@ -33,7 +33,6 @@ public class HinoResource {
 		HinoDAO hinoDAO = new HinoDAO();
 		Hino novoHino = new Gson().fromJson(hino, Hino.class);
 		hinoDAO.salvar(novoHino);
-		System.out.println("entou no metodo");
 	}
 
 }
