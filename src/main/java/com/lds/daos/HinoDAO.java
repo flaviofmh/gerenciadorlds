@@ -27,5 +27,30 @@ public class HinoDAO {
 		tx.commit();
 		manager.close();
 	}
+	
+	public void remover(Long id) {
+		EntityManager manager = JPAUtil.getEntityManager();
+		EntityTransaction tx = manager.getTransaction();
+		Hino hino = manager.getReference(Hino.class, id);
+		tx.begin(); 
+		manager.remove(hino); 
+		tx.commit();
+	}
+	
+	public Hino carregarHino(Long id) {
+		EntityManager manager = JPAUtil.getEntityManager();
+		manager.getTransaction().begin();
+		Hino hinoCarregado = manager.find(Hino.class, id);
+		manager.close();
+		return hinoCarregado;
+	}
+	
+	public void atualizarHino(Hino hino) {
+		EntityManager manager = JPAUtil.getEntityManager();
+		manager.getTransaction().begin();
+		manager.merge(hino);
+		manager.getTransaction().commit();
+
+	}
 
 }
