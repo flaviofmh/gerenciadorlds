@@ -6,4 +6,4 @@ Usando o jdk 1.8;
 Usando o postgres e o hibernate versoes recentes (ate o momento para mim do ano de 2016 em janeiro)
 - ORDER BY no angular não está sendo feito pela data. Em processo de desenvolvimento e estudo para ordenar pela data;
 Web service com rest usando o jersey
-A tela de cadastro no momento está em desenvolvimento, faltando receber os dados do formulario para o metodo no java de insert.
+A tela de cadastro, listagem de dados, excluir e atulizar os dados está desenvolvida.
