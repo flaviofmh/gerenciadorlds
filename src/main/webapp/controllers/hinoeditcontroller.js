@@ -28,7 +28,7 @@ angular.module('ldsApp').controller('HinoEditCtrl', function ($scope, $http, $ro
     		if($routeParams.hinoId) {
     			$http({
   				  method: 'PUT',
-  				  url: 'http://localhost:8080/gerenciadorlds/lds/hino/inserir',
+  				  url: 'http://localhost:8080/gerenciadorlds/lds/hino/atualizar',
   				  data : $scope.hino,
   				  headers: {
   				        'Content-Type': 'application/json'

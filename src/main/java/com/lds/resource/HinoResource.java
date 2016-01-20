@@ -66,10 +66,11 @@ public class HinoResource {
 	@PUT
 	@Path("/atualizar")
 	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public void atualizar(String hino) {
 		HinoDAO hinoDAO = new HinoDAO();
-		Hino novoHino = new Gson().fromJson(hino, Hino.class);
-		hinoDAO.salvar(novoHino);
+		Hino hinoAtualizado = new Gson().fromJson(hino, Hino.class);
+		hinoDAO.atualizarHino(hinoAtualizado);
 	}
 	
 }
