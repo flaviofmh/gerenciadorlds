@@ -112,4 +112,9 @@ public class Hino {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Hino [id=" + id + ", dataUsado=" + dataUsado + "]";
+	}
+
 }

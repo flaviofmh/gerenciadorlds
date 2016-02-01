@@ -64,10 +64,10 @@ public class HinoResource {
 	}
 	
 	@PUT
-	@Path("/atualizar")
+	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public void atualizar(String hino) {
+	public void atualizar(@PathParam("id") int id, String hino) {
 		HinoDAO hinoDAO = new HinoDAO();
 		Hino hinoAtualizado = new Gson().fromJson(hino, Hino.class);
 		hinoDAO.atualizarHino(hinoAtualizado);
